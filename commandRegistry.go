@@ -13,7 +13,9 @@ type Commands struct {
 	cmd map[string]func(*State, Command) error
 }
 
-func (c *Commmands)
+func (c *Commmands) run(s *State, cmd Command) error {
+
+}
 
 func handlerLogin(s *State, cmd Command) error {
 	if len(cmd.args) == 0 {
