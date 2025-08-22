@@ -11,6 +11,10 @@ const (
 	cfgFile = ".gatorconfig.json"
 )
 
+type State struct {
+	cfg *Config
+}
+
 type Config struct {
 	DBURL    string `json:"db_url"`
 	Username string `json:"current_user_name"`
