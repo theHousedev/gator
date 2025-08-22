@@ -1,10 +1,29 @@
 package main
 
-// comment
 import (
-	"github.com/theHousedev/bd-gator/internal/config"
+	"fmt"
+	"log"
+
+	"github.com/theHousedev/gator/internal/config"
 )
 
 func main() {
-	// comment
+	cfg, err := config.Read()
+	if err != nil {
+		log.Fatalf("Failed to read config: %v", err)
+	}
+
+	fmt.Println(cfg)
+
+	cfg, err = cfg.SetUser("house")
+	if err != nil {
+		log.Fatalf("Failed to set user: %v", err)
+	}
+
+	cfg, err = config.Read()
+	if err != nil {
+		log.Fatalf("Failed to read config: %v", err)
+	}
+
+	fmt.Println(cfg)
 }
